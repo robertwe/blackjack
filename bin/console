@@ -1,0 +1,4 @@
+#! /usr/bin/env sh
+
+irb -I./lib -rblackjack_game -rdealer -rcards
+

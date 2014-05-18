@@ -4,21 +4,22 @@ require 'dealer'
 describe "a blackjack_dealer" do
   subject { Dealer }
   let(:cards) { 1_000.times.map.with_index {|i| i } }
+  let(:hands) { BlackjackGame.empty_hands }
 
-  describe "deal_soft_hand(hands_count)" do
-    it "must deal two hands" do
-      deal = subject.deal_soft_hand([[], []], cards)
-      deal.count.must_equal 2
+  describe "#deal(hands, cards)" do
+    it "returns the resulting hands" do
+      dealt_hands = subject.deal(hands, cards)
+      dealt_hands[0].count.must_equal 2
     end
 
     it "must deal 2 cards to the first player" do
-      deal = subject.deal_soft_hand([[], []], cards)
-      deal[0].count.must_equal 2
+      dealt_hand = subject.deal(BlackjackGame.empty_hands, cards)
+      dealt_hand[0].count.must_equal 2
     end
 
     it "doesn't give the first two consecutive cards to the first player" do
-      deal = subject.deal_soft_hand([[], []], cards)
-      (deal[0][0] + 1).wont_equal deal[0][1]
+      dealt_hand = subject.deal(BlackjackGame.empty_hands, cards)
+      (dealt_hand[0][0] + 1).wont_equal dealt_hand[0][1]
     end
   end
 

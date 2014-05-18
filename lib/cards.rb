@@ -2,8 +2,8 @@ module Cards
   extend self
 
   SUITS = %i[hearts clubs diamonds spades]
-  RANKS = %i[ace two three four five six seven eight nine ten
-             jack queen king]
+  RANKS = %i[two three four five six seven eight nine ten
+             jack queen king ace]
 
   Card = Struct.new(:suit, :rank) do; end
 

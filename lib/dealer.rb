@@ -5,7 +5,7 @@ module Dealer
     cards.shuffle
   end
 
-  def deal_soft_hand(hands, cards)
+  def deal(hands, cards)
     2.times.map {
       hands.map { cards.pop } }
   end
