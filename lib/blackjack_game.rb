@@ -14,7 +14,7 @@ class BlackjackGame
     self
   end
 
-
 private
+
 
 end
