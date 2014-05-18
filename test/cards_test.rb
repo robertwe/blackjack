@@ -3,7 +3,7 @@ require 'cards'
 
 describe Cards do
   describe "a standard 52 card deck" do
-    subject { Cards.make_deck }
+    subject { Cards.build_deck }
 
     it "must have 52 cards" do
       subject.count.must_equal 52
@@ -23,7 +23,7 @@ describe Cards do
   end
 
   describe "a blackjack deck with a shoe size of 33" do
-    subject { Cards.make_deck(33) }
+    subject { Cards.build_deck(33) }
 
     it "must have (52) cards" do
       subject.count.must_equal (52*33)

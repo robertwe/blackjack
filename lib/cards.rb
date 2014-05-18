@@ -7,17 +7,13 @@ module Cards
 
   Card = Struct.new(:suit, :rank) do; end
 
-  def make_deck(shoe_size=1)
+  def build_deck(shoe_size=1)
     make_cards*shoe_size
   end
 
 private
 
   def make_cards
-    make_ranks
-  end
-
-  def make_ranks
     RANKS.flat_map {|rank| make_suits_for(rank) }
   end
 
